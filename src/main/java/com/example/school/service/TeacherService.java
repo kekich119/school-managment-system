@@ -3,6 +3,7 @@ package com.example.school.service;
 import com.example.school.model.Teacher;
 import com.example.school.repository.TeachersRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -28,6 +29,7 @@ public class TeacherService {
         return teachersRepository.findById(id).get();
     }
 
+    @Transactional
     public Teacher addTeacher(Teacher teacher) {
         return teachersRepository.save(teacher);
     }

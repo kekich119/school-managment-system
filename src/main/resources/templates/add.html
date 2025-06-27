@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href="/static/styles.css" rel="stylesheet">
+<link href="/styles.css" rel="stylesheet">
+<link rel="reset" href="/reset.css">
 
 <head>
     <meta charset="UTF-8">
     <title>Добавить учителя</title>
 </head>
 <body>
+
 <h2>Добавить учителя</h2>
+
+
 <form th:action="@{/visit/add}" method="post">
+
+
     <label for="name">Имя учителя</label>
     <input type="text" id="name" name="name" required>
+
+    <label for="last_name">Фамилия</label>
+    <input type="text" id="last_name" name="last_name" required>
+
+
+    <label for="age">Возраст</label>
+    <input type="number" id="age" name="age" required>
+
+
 
     <button type="submit"> Добавить</button>
 </form>

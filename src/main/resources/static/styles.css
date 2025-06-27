@@ -13,155 +13,96 @@ body {
     padding: 20px;
 }
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 20px;
-    text-align: center;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-nav {
-    margin-top: 10px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: 15px;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #ffeb3b;
-}
-
-main {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
+/* Стиль для красивого заголовка */
 h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #4CAF50;
-}
-
-a {
-    color: #4CAF50;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #45a049;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
-
-thead {
-    background-color: #4CAF50;
-    color: white;
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
-td a {
-    display: inline-block;
-    padding: 6px 12px;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 4px;
+    font-size: 2.2rem;
+    color: #fff;
     text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-td a:hover {
-    background-color: #45a049;
-}
-
-/* Кнопка "Добавить проект" */
-a[href="/projects/add"] {
-    display: inline-block;
-    margin-bottom: 15px;
-    padding: 10px 15px;
+    margin: 0 auto 30px;
+    padding: 15px 30px;
     background-color: #4CAF50;
-    color: white;
-    border-radius: 4px;
-    text-align: center;
-    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    width: fit-content;
+    position: relative;
+
 }
 
-a[href="/projects/add"]:hover {
-    background-color: #45a049;
-}
 
 /* Стили для форм */
 form {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 form label {
     font-weight: bold;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 1rem;
 }
 
 form input[type="text"],
-form input[type="email"],
-form input[type="password"],
-form textarea,
-form select {
+form input[type="number"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
 }
 
 form button {
-    display: inline-block;
-    padding: 10px 15px;
+    display: block;
+    width: 100%;
+    padding: 14px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
 }
 
 form button:hover {
-    background-color: #45a049;
+    background-color: #3d8b40;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        padding: 12px 20px;
+        margin-bottom: 25px;
+    }
+
+    form {
+        padding: 25px;
+    }
 }

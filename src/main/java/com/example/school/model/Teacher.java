@@ -22,15 +22,15 @@ public class Teacher {
     private Long id;
 
     private String name;
-    private String lastName;
+    private String last_name;
     private int age;
 
 
 
-    public Teacher(String name, String lastName, int age) {
+    public Teacher(String name, String last_name, int age) {
         this.age = age;
         this.name = name;
-        this.lastName = lastName;
+        this.last_name = last_name;
     }
 
 
