@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link href="/styles.css" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Get teachers</title>
+</head>
+<body>
+<form method="GET" action="/visit" enctype="multipart/form-data">
+
+    <label>
+
+        <button type="submit"> получить список учителей</button>
+
+    </label>
+</form>
+
+<div th:if="${teacher != null}">
+
+    <pre th:text="${teacher}">text</pre>
+</div>
+
+</body>
+</html>
