@@ -13,7 +13,6 @@ import org.springframework.data.annotation.Id;
 @Entity
 @Table(name = "teacher")
 @Data
-
 public class Teacher {
 
     @jakarta.persistence.Id
@@ -22,19 +21,16 @@ public class Teacher {
     private Long id;
 
     private String name;
-    private String last_name;
+
+    private String lastName; // ✅ БЫЛО: last_name
+
     private int age;
 
-
-
-    public Teacher(String name, String last_name, int age) {
-        this.age = age;
+    public Teacher(String name, String lastName, int age) {
         this.name = name;
-        this.last_name = last_name;
+        this.lastName = lastName;
+        this.age = age;
     }
 
-
-    public Teacher() {
-
-    }
+    public Teacher() {}
 }

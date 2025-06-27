@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+
 public class TeacherService {
     private final TeachersRepository teachersRepository;
     private Teacher teacher;
@@ -21,9 +22,7 @@ public class TeacherService {
         return teachersRepository.findAll();
     }
 
-    public Teacher findByName(String name) {
-        return teachersRepository.findByName(name);
-    }
+
 
     public Teacher findById(Long id) {
         return teachersRepository.findById(id).get();
@@ -33,6 +32,8 @@ public class TeacherService {
     public Teacher addTeacher(Teacher teacher) {
         return teachersRepository.save(teacher);
     }
+
+
 
 
 

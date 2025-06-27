@@ -23,10 +23,23 @@ public class TeacherController {
         this.teacherService = teacherService;
     }
 
-
+    @GetMapping
     public String showHtml() {
         return "visit";
     }
+
+    @GetMapping("/main")
+    public String getAllTeachers(Model model) {
+        List<Teacher> list = teacherService.findAllTeachers();
+        System.out.println("Учителей в базе: " + list.size()); // добавь лог
+        model.addAttribute("teachers", list);
+        return "visit";
+    }
+
+
+
+
+
 
 
 
@@ -42,8 +55,11 @@ public class TeacherController {
 
         teacherService.addTeacher(teacher);
         return "redirect:/visit";
-
     }
+
+
+
+
 
 
 }

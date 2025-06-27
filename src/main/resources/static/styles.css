@@ -106,3 +106,136 @@ form button:hover {
         padding: 25px;
     }
 }
+
+
+
+h1{
+
+    margin: 0 -20px; /* Компенсируем padding body */
+    padding: 15px 20px;
+    color: #fffafa;
+    text-align: center;
+
+
+}
+
+header{
+    display: flex;
+    align-items: center;
+    background-color: #4CAF50;
+    margin: 0 -20px; /* Компенсируем padding body */
+    padding: 15px 20px;
+}
+
+nav{
+    margin-right: 100px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin: 0 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Стили для таблицы учителей */
+.teachers-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 30px 0;
+    font-size: 1rem;
+}
+
+.teachers-table thead {
+    background-color: #4CAF50;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.teachers-table th {
+    padding: 16px 20px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+}
+
+.teachers-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.2s ease;
+}
+
+/* Красивое оформление данных */
+.teachers-table td:nth-child(1) { /* Имя */
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.teachers-table td:nth-child(2) { /* Фамилия */
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.teachers-table td:nth-child(3) { /* Возраст */
+    color: #4CAF50;
+    font-weight: 700;
+}
+
+.teachers-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Эффекты при наведении */
+.teachers-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.teachers-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.teachers-table tbody tr:hover {
+    background-color: #e8f5e9;
+}
+
+.teachers-table tbody tr:hover td {
+    transform: translateX(5px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .teachers-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .teachers-table th,
+    .teachers-table td {
+        padding: 12px 15px;
+        min-width: 120px;
+    }
+
+    .teachers-table td {
+        font-size: 0.9rem;
+    }
+}

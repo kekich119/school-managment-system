@@ -1,22 +1,37 @@
 <!DOCTYPE html>
-
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<link href="/styles.css" rel="stylesheet">
-
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Get teachers</title>
+    <meta charset="UTF-8" />
+    <title>Список учителей</title>
+    <link href="/styles.css" rel="stylesheet" />
 </head>
 <body>
-<form method="GET" action="/visit" enctype="multipart/form-data">
 
+<header>
+    <nav>
+        <a href="/visit/add">Добавить учителя</a>
+        <a href="/delete/teacher">Удалить учителя</a>
+        <a href="/visit/main">Главная</a>
+    </nav>
+    <h1>Список учителей</h1>
+</header>
 
-</form>
-
-<div th:if="${teacher != null}">
-
-    <pre th:text="${teacher}">text</pre>
-</div>
+<table class="teachers-table">
+    <thead>
+    <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Возраст</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="teacher : ${teachers}">
+        <td th:text="${teacher.name}"></td>
+        <td th:text="${teacher.lastName}"></td>
+        <td th:text="${teacher.age}"></td>
+    </tr>
+    </tbody>
+</table>
 
 </body>
 </html>
