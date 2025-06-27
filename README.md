@@ -18,3 +18,11 @@ This is a personal project aimed at building a website for a school.
 ---
 
 > 🚧 The project is still in development.
+
+##Navigation🧭
+
+
+- **/visit/add**: Is add new theacher in db
+- **/visit/main**: Show list all theachers staff
+  
+
