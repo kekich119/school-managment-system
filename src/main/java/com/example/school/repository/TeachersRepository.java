@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface TeachersRepository extends JpaRepository<Teacher, Long> {
 
 
-
-
+    void deleteTeacherByName(String name);
 }

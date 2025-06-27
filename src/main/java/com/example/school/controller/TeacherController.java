@@ -5,11 +5,9 @@ import com.example.school.model.Teacher;
 import com.example.school.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,8 +17,11 @@ public class TeacherController {
     @Autowired
     private final TeacherService teacherService;
 
-    public TeacherController(TeacherService teacherService) {
+    private final TeacherService teacherService2;
+
+    public TeacherController(TeacherService teacherService, TeacherService teacherService2) {
         this.teacherService = teacherService;
+        this.teacherService2 = teacherService2;
     }
 
     @GetMapping
@@ -37,11 +38,17 @@ public class TeacherController {
     }
 
 
-
-
-
-
-
+    @GetMapping("/delete")
+    public String showDeleteForm(Model model) {
+        model.addAttribute("teachers", teacherService.findAllTeachers());
+        return "/delete";
+    }
+    @Transactional
+    @PostMapping("/delete")
+    public String deleteTeacher(@RequestParam String name) {
+        teacherService.deleteTeacherByName(name);
+        return "redirect:/visit/delete";
+    }
 
 
     @GetMapping("/add")
@@ -54,12 +61,8 @@ public class TeacherController {
     public String addTeacher(@ModelAttribute Teacher teacher) {
 
         teacherService.addTeacher(teacher);
-        return "redirect:/visit";
+        return "redirect:/visit/main";
     }
-
-
-
-
 
 
 }

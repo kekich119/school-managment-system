@@ -33,7 +33,13 @@ public class TeacherService {
         return teachersRepository.save(teacher);
     }
 
+    public void deleteTeacherByName(String name) {
+        teachersRepository.deleteTeacherByName(name);
+    }
 
+    public void deleteTeacher(Teacher teacher) {
+        teachersRepository.delete(teacher);
+    }
 
 
 

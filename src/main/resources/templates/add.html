@@ -16,18 +16,24 @@
 
 
     <label for="name">Имя учителя</label>
-    <input type="text" id="name" name="name" required>
+    <input type="text" id="name" name="name" onkeydown="return event.key !== ' '"  required>
+
 
     <label for="lastName">Фамилия</label>
-    <input type="text" id="lastName" name="lastName" required>
+    <input type="text" id="lastName" name="lastName" onkeydown="return event.key !== ' '" required>
 
 
     <label for="age">Возраст</label>
-    <input type="number" id="age" name="age" required>
+    <input type="number" id="age" name="age" min="18" onkeydown="return event.key !== ' '" required>
 
 
 
     <button type="submit"> Добавить</button>
 </form>
 </body>
+
+
+
+
+
 </html>
