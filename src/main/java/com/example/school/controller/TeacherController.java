@@ -6,6 +6,7 @@ import com.example.school.service.TeacherService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -29,6 +30,14 @@ public class TeacherController {
 
         model.addAttribute("teacher", teacherService.findAllTeachers().toString());
         return teacherService.findAllTeachers();
+
+    }
+
+
+    @GetMapping("/add")
+    public String addTeacher(@ModelAttribute Teacher teacher) {
+        teacherService.addTeacher(teacher);
+        return "teacher/add";
 
     }
 

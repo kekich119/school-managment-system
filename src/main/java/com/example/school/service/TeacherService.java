@@ -9,6 +9,7 @@ import java.util.List;
 @Service
 public class TeacherService {
     private final TeachersRepository teachersRepository;
+    private Teacher teacher;
 
 
     public TeacherService(TeachersRepository teachersRepository) {
@@ -26,5 +27,11 @@ public class TeacherService {
     public Teacher findById(Long id) {
         return teachersRepository.findById(id).get();
     }
+
+    public Teacher addTeacher(Teacher teacher) {
+        return teachersRepository.save(teacher);
+    }
+
+
 
 }

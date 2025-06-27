@@ -26,4 +26,15 @@ public class Teacher {
     private int age;
 
 
+
+    public Teacher(String name, String lastName, int age) {
+        this.age = age;
+        this.name = name;
+        this.lastName = lastName;
+    }
+
+
+    public Teacher() {
+
+    }
 }
