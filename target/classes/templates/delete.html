@@ -10,6 +10,7 @@
 <header>
   <nav>
     <a href="/visit/add">Добавить учителя</a>
+    <a href="/visit/filter">Фильтровать</a>
     <a href="/visit/delete">Удалить учителя</a>
     <a href="/visit/main">Главная</a>
   </nav>
@@ -36,9 +37,17 @@
 <form th:action="@{/visit/delete}" method="post">
   <label for="name">Имя учителя, которого надо удалить
     <input type="text" id="name" name="name" onkeydown="return event.key !== ' '" required>
+
+    <div th:if="${error}" style="color: red; margin-top: 10px;">
+      <p th:text="${error}"></p>
+    </div>
+
+
     <button type="submit">Удалить</button>
   </label>
-</form>
+  </form>
+
+
 
 </body>
 </html>

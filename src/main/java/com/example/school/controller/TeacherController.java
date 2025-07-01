@@ -18,11 +18,9 @@ public class TeacherController {
     @Autowired
     private final TeacherService teacherService;
 
-    private final TeacherService teacherService2;
 
     public TeacherController(TeacherService teacherService, TeacherService teacherService2) {
         this.teacherService = teacherService;
-        this.teacherService2 = teacherService2;
     }
 
     @GetMapping
@@ -44,10 +42,16 @@ public class TeacherController {
         model.addAttribute("teachers", teacherService.findAllTeachers());
         return "/delete";
     }
+
     @Transactional
     @PostMapping("/delete")
-    public String deleteTeacher(@RequestParam String name) {
-        teacherService.deleteTeacherByName(name);
+    public String deleteTeacher(@RequestParam String name, RedirectAttributes redirectAttributes) {
+        boolean isLive = teacherService.existsByName(name);
+        if (isLive) {
+            teacherService.deleteTeacherByName(name);
+        } else {
+            redirectAttributes.addFlashAttribute("error", "Такого имени нет");
+        }
         return "redirect:/visit/delete";
     }
 
