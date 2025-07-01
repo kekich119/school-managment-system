@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Сортировка</title>
+    <link href="/filterStyle.css" rel="stylesheet"/>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="/visit/add">Добавить учителя</a>
+        <a href="/visit/filter">Фильтровать</a>
+        <a href="/visit/delete">Удалить учителя</a>
+        <a href="/visit/main">Главная</a>
+    </nav>
+    <h1>Фильтр учителей</h1>
+</header>
+
+<div class="subject">
+    <form action="/visit/filter" method="get" class="filter-wrapper">
+        <label for="subject">Фильтровать по предмету:</label>
+        <select name="subject" id="subject">
+            <option value="Математика">Математика</option>
+            <option value="Физика">Физика</option>
+            <option value="Химия">Химия</option>
+            <option value="Русский язык">Русский язык</option>
+            <option value="Биология">Биология</option>
+            <option value="Литература">Литература</option>
+            <option value="История">История</option>
+
+            <!-- Добавь свои предметы или подгружай динамически -->
+        </select>
+        <button type="submit">Применить</button>
+    </form>
+
+</div>
+
+<table class="teachers-table">
+    <thead>
+    <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Возраст</th>
+        <th>Предмет</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="teacher : ${teachers}">
+        <td th:text="${teacher.name}"></td>
+        <td th:text="${teacher.lastName}"></td>
+        <td th:text="${teacher.age}"></td>
+        <td th:text="${teacher.subject}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

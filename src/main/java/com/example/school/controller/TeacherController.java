@@ -64,10 +64,10 @@ public class TeacherController {
         return "redirect:/visit/main";
     }
 
-    @GetMapping("/visit/main")
+    @GetMapping("/filter")
     public String showFilterForm(Model model, @RequestParam String subject) {
         List<Teacher> list = teacherService.filterTeacherBySubject(subject);
         model.addAttribute("teachers", list);
-        return "visit";
+        return "filter";
     }
 }
