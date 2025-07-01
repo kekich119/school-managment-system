@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Удалить</title>
+  <link href="/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/visit/add">Добавить учителя</a>
+    <a href="/visit/delete">Удалить учителя</a>
+    <a href="/visit/main">Главная</a>
+  </nav>
+  <h1>Список учителей</h1>
+</header>
+
+<table class="teachers-table">
+  <thead>
+  <tr>
+    <th>Имя</th>
+    <th>Фамилия</th>
+    <th>Возраст</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="teacher : ${teachers}">
+    <td th:text="${teacher.name}"></td>
+    <td th:text="${teacher.lastName}"></td>
+    <td th:text="${teacher.age}"></td>
+  </tr>
+  </tbody>
+</table>
+
+<form th:action="@{/visit/delete}" method="post">
+  <label for="name">Имя учителя, которого надо удалить
+    <input type="text" id="name" name="name" onkeydown="return event.key !== ' '" required>
+    <button type="submit">Удалить</button>
+  </label>
+</form>
+
+</body>
+</html>
