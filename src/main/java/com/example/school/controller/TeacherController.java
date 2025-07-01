@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -17,11 +18,9 @@ public class TeacherController {
     @Autowired
     private final TeacherService teacherService;
 
-    private final TeacherService teacherService2;
 
     public TeacherController(TeacherService teacherService, TeacherService teacherService2) {
         this.teacherService = teacherService;
-        this.teacherService2 = teacherService2;
     }
 
     @GetMapping
@@ -43,10 +42,16 @@ public class TeacherController {
         model.addAttribute("teachers", teacherService.findAllTeachers());
         return "/delete";
     }
+
     @Transactional
     @PostMapping("/delete")
-    public String deleteTeacher(@RequestParam String name) {
-        teacherService.deleteTeacherByName(name);
+    public String deleteTeacher(@RequestParam String name, RedirectAttributes redirectAttributes) {
+        boolean isLive = teacherService.existsByName(name);
+        if (isLive) {
+            teacherService.deleteTeacherByName(name);
+        } else {
+            redirectAttributes.addFlashAttribute("error", "Такого имени нет");
+        }
         return "redirect:/visit/delete";
     }
 
@@ -58,11 +63,22 @@ public class TeacherController {
     }
 
     @PostMapping("/add")
-    public String addTeacher(@ModelAttribute Teacher teacher) {
-
-        teacherService.addTeacher(teacher);
-        return "redirect:/visit/main";
+    public String addTeacher(@ModelAttribute Teacher teacher, RedirectAttributes redirectAttributes) {
+        boolean isLive = teacherService.existsByName(teacher.getName());
+        if (isLive) {
+            redirectAttributes.addFlashAttribute("error", "Такое имя уже есть! Повторите попытку");
+            redirectAttributes.addFlashAttribute("user", teacher); // чтобы заполнить форму снова
+            return "redirect:/visit/add";
+        } else {
+            teacherService.addTeacher(teacher);
+            return "redirect:/visit/main";
+        }
     }
 
-
+    @GetMapping("/filter")
+    public String showFilterForm(Model model, @RequestParam String subject) {
+        List<Teacher> list = teacherService.filterTeacherBySubject(subject);
+        model.addAttribute("teachers", list);
+        return "filter";
+    }
 }

@@ -22,23 +22,22 @@ public class TeacherService {
         return teachersRepository.findAll();
     }
 
-
-
-    public Teacher findById(Long id) {
-        return teachersRepository.findById(id).get();
+    public boolean existsByName(String name) {
+        return teachersRepository.existsByName(name);
     }
 
     @Transactional
-    public Teacher addTeacher(Teacher teacher) {
-        return teachersRepository.save(teacher);
+    public void addTeacher(Teacher teacher) {
+        teachersRepository.save(teacher);
     }
 
     public void deleteTeacherByName(String name) {
         teachersRepository.deleteTeacherByName(name);
     }
 
-    public void deleteTeacher(Teacher teacher) {
-        teachersRepository.delete(teacher);
+    public List<Teacher> filterTeacherBySubject(String subject) {
+        System.out.println("filterTeacherBySubject: " + subject);
+        return teachersRepository.findTeachersBySubject(subject);
     }
 
 

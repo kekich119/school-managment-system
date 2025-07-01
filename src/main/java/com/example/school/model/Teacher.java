@@ -22,14 +22,18 @@ public class Teacher {
 
     private String name;
 
+    private String subject;
+
+
     private String lastName; // ✅ БЫЛО: last_name
 
     private int age;
 
-    public Teacher(String name, String lastName, int age) {
+    public Teacher(String name, String lastName, int age, String subject) {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
+        this.subject = subject;
     }
 
     public Teacher() {}
