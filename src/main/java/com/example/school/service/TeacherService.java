@@ -22,10 +22,13 @@ public class TeacherService {
         return teachersRepository.findAll();
     }
 
+    public boolean existsByName(String name) {
+        return teachersRepository.existsByName(name);
+    }
 
     @Transactional
-    public Teacher addTeacher(Teacher teacher) {
-        return teachersRepository.save(teacher);
+    public void addTeacher(Teacher teacher) {
+        teachersRepository.save(teacher);
     }
 
     public void deleteTeacherByName(String name) {

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <link href="/styles.css" rel="stylesheet">
-<link rel="reset" href="/reset.css">
 
 <head>
     <meta charset="UTF-8">
@@ -38,8 +37,14 @@
     </select>
 
 
+    <div th:if="${error}" style="color: red; margin-top: 10px;">
+        <p th:text="${error}"></p>
+    </div>
+
+
     <button type="submit"> Добавить</button>
 </form>
+
 </body>
 
 

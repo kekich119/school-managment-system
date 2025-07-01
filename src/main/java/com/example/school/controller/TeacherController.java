@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -58,10 +59,16 @@ public class TeacherController {
     }
 
     @PostMapping("/add")
-    public String addTeacher(@ModelAttribute Teacher teacher) {
-
-        teacherService.addTeacher(teacher);
-        return "redirect:/visit/main";
+    public String addTeacher(@ModelAttribute Teacher teacher, RedirectAttributes redirectAttributes) {
+        boolean isLive = teacherService.existsByName(teacher.getName());
+        if (isLive) {
+            redirectAttributes.addFlashAttribute("error", "Такое имя уже есть! Повторите попытку");
+            redirectAttributes.addFlashAttribute("user", teacher); // чтобы заполнить форму снова
+            return "redirect:/visit/add";
+        } else {
+            teacherService.addTeacher(teacher);
+            return "redirect:/visit/main";
+        }
     }
 
     @GetMapping("/filter")
