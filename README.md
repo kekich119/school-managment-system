@@ -34,5 +34,7 @@ This is a personal project aimed at building a website for a school.
 
 - **/visit/add**: Is add new theacher in db
 - **/visit/main**: Show list all theachers staff
+- **/visit/delete**: Delete teacher by name
+- **/visit/filter**: View filtered teacher by name
   
 
