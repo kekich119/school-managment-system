@@ -36,5 +36,6 @@ public class Teacher {
         this.subject = subject;
     }
 
-    public Teacher() {}
+    public Teacher() {
+    }
 }

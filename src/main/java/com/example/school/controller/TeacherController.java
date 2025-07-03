@@ -16,10 +16,10 @@ import java.util.List;
 @RequestMapping("/visit")
 public class TeacherController {
     @Autowired
-    private final TeacherService teacherService;
+private final TeacherService teacherService;
 
 
-    public TeacherController(TeacherService teacherService, TeacherService teacherService2) {
+    public TeacherController(TeacherService teacherService) {
         this.teacherService = teacherService;
     }
 
@@ -35,6 +35,7 @@ public class TeacherController {
         model.addAttribute("teachers", list);
         return "visit";
     }
+
 
 
     @GetMapping("/delete")
@@ -59,8 +60,12 @@ public class TeacherController {
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("user", new Teacher());
-        return "/add";
+          return "/add" ;
     }
+
+
+
+
 
     @PostMapping("/add")
     public String addTeacher(@ModelAttribute Teacher teacher, RedirectAttributes redirectAttributes) {
@@ -73,12 +78,21 @@ public class TeacherController {
             teacherService.addTeacher(teacher);
             return "redirect:/visit/main";
         }
+
     }
 
     @GetMapping("/filter")
-    public String showFilterForm(Model model, @RequestParam String subject) {
+    public String showFilterForm(Model model, @RequestParam String subject, RedirectAttributes redirectAttributes) {
+
+        List<Teacher> allTeachers = teacherService.findAllTeachers();
         List<Teacher> list = teacherService.filterTeacherBySubject(subject);
-        model.addAttribute("teachers", list);
-        return "filter";
+        if (allTeachers.isEmpty()) {
+            redirectAttributes.addFlashAttribute("error", "Учителей нет в базе данных");
+            return "redirect:/visit/filter";
+        }else {
+            model.addAttribute("teachers", list);
+            return "filter";
+        }
+
     }
 }
