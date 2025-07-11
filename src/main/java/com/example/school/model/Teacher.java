@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,14 +22,15 @@ public class Teacher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
 
-    private String subject;
+    private @NotNull @Size(min = 3, max = 10) String name;
+
+    private @NotNull  String subject;
 
 
-    private String lastName; // ✅ БЫЛО: last_name
+    private @NotNull @Size(min = 3, max = 10) String lastName; // ✅ БЫЛО: last_name
 
-    private int age;
+    private @NotNull int age;
 
     public Teacher(String name, String lastName, int age, String subject) {
         this.name = name;

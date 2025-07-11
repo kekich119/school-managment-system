@@ -3,6 +3,8 @@ package com.example.school.controller;
 
 import com.example.school.model.Teacher;
 import com.example.school.service.TeacherService;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -46,6 +48,7 @@ private final TeacherService teacherService;
 
     @Transactional
     @PostMapping("/delete")
+
     public String deleteTeacher(@RequestParam String name, RedirectAttributes redirectAttributes) {
         boolean isLive = teacherService.existsByName(name);
         if (isLive) {
@@ -68,7 +71,8 @@ private final TeacherService teacherService;
 
 
     @PostMapping("/add")
-    public String addTeacher(@ModelAttribute Teacher teacher, RedirectAttributes redirectAttributes) {
+
+    public String addTeacher(@ModelAttribute  Teacher teacher, RedirectAttributes redirectAttributes) {
         boolean isLive = teacherService.existsByName(teacher.getName());
         if (isLive) {
             redirectAttributes.addFlashAttribute("error", "Такое имя уже есть! Повторите попытку");
