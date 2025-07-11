@@ -3,6 +3,8 @@ package com.example.school.controller;
 
 import com.example.school.model.Teacher;
 import com.example.school.service.TeacherService;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,10 +18,10 @@ import java.util.List;
 @RequestMapping("/visit")
 public class TeacherController {
     @Autowired
-    private final TeacherService teacherService;
+private final TeacherService teacherService;
 
 
-    public TeacherController(TeacherService teacherService, TeacherService teacherService2) {
+    public TeacherController(TeacherService teacherService) {
         this.teacherService = teacherService;
     }
 
@@ -37,6 +39,7 @@ public class TeacherController {
     }
 
 
+
     @GetMapping("/delete")
     public String showDeleteForm(Model model) {
         model.addAttribute("teachers", teacherService.findAllTeachers());
@@ -45,6 +48,7 @@ public class TeacherController {
 
     @Transactional
     @PostMapping("/delete")
+
     public String deleteTeacher(@RequestParam String name, RedirectAttributes redirectAttributes) {
         boolean isLive = teacherService.existsByName(name);
         if (isLive) {
@@ -59,11 +63,16 @@ public class TeacherController {
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("user", new Teacher());
-        return "/add";
+          return "/add" ;
     }
 
+
+
+
+
     @PostMapping("/add")
-    public String addTeacher(@ModelAttribute Teacher teacher, RedirectAttributes redirectAttributes) {
+
+    public String addTeacher(@ModelAttribute  Teacher teacher, RedirectAttributes redirectAttributes) {
         boolean isLive = teacherService.existsByName(teacher.getName());
         if (isLive) {
             redirectAttributes.addFlashAttribute("error", "Такое имя уже есть! Повторите попытку");
@@ -73,12 +82,21 @@ public class TeacherController {
             teacherService.addTeacher(teacher);
             return "redirect:/visit/main";
         }
+
     }
 
     @GetMapping("/filter")
-    public String showFilterForm(Model model, @RequestParam String subject) {
+    public String showFilterForm(Model model, @RequestParam String subject, RedirectAttributes redirectAttributes) {
+
+        List<Teacher> allTeachers = teacherService.findAllTeachers();
         List<Teacher> list = teacherService.filterTeacherBySubject(subject);
-        model.addAttribute("teachers", list);
-        return "filter";
+        if (allTeachers.isEmpty()) {
+            redirectAttributes.addFlashAttribute("error", "Учителей нет в базе данных");
+            return "redirect:/visit/filter";
+        }else {
+            model.addAttribute("teachers", list);
+            return "filter";
+        }
+
     }
 }

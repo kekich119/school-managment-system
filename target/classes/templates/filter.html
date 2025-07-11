@@ -31,6 +31,10 @@
 
             <!-- Добавь свои предметы или подгружай динамически -->
         </select>
+
+        <div th:if="${error}" style="color: red; margin-top: 10px;">
+            <p th:text="${error}"></p>
+        </div>
         <button type="submit">Применить</button>
     </form>
 
