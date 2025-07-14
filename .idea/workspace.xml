@@ -73,6 +73,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -80,6 +81,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.SchoolApplication.executor": "Run",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/kekich/IdeaProjects/school-managment-system",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -158,6 +160,7 @@
       <workItem from="1752232325487" duration="937000" />
       <workItem from="1752510368965" duration="797000" />
       <workItem from="1752512107362" duration="4064000" />
+      <workItem from="1752516186798" duration="328000" />
     </task>
     <servers />
   </component>
