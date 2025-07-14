@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <title>Список учителей</title>
+    <link href="/styles.css" rel="stylesheet" />
 </head>
-
 <body>
+
+<header>
+    <nav>
+        <a href="/visit/add">Добавить учителя</a>
+        <a href="/visit/filter?subject=Математика">Фильтровать</a>
+        <a href="/visit/delete">Удалить учителя</a>
+        <a href="/visit/main">Главная</a>
+
+    </nav>
+    <h1>Список учителей</h1>
+</header>
+
+<table class="teachers-table">
+    <thead>
+    <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Возраст</th>
+        <th>Предмет</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="teacher : ${teachers}">
+        <td data-label="Имя" th:text="${teacher.name}"></td>
+        <td data-label="Фамилия" th:text="${teacher.lastName}"></td>
+        <td data-label="Возраст" th:text="${teacher.age}"></td>
+        <td data-label="Предмет" th:text="${teacher.subject}"></td>
+    </tr>
+    </tbody>
+</table>
 
 </body>
 </html>

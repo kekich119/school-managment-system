@@ -3,6 +3,7 @@ package com.example.school.controller;
 
 import com.example.school.model.Teacher;
 import com.example.school.service.TeacherService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import java.util.List;
 @RequestMapping("/visit")
 public class TeacherController {
     @Autowired
-private final TeacherService teacherService;
+    private final TeacherService teacherService;
 
 
     public TeacherController(TeacherService teacherService) {
@@ -27,17 +28,21 @@ private final TeacherService teacherService;
 
     @GetMapping
     public String showHtml() {
+
         return "visit";
     }
 
     @GetMapping("/main")
-    public String getAllTeachers(Model model) {
+    public String getAllTeachers(Model model, HttpServletRequest request) {
+        String ip = request.getRemoteAddr();
+        String userAgent = request.getHeader("User-Agent");
+        System.out.println(ip);
+        System.out.println(userAgent);
         List<Teacher> list = teacherService.findAllTeachers();
         System.out.println("Учителей в базе: " + list.size()); // добавь лог
         model.addAttribute("teachers", list);
         return "visit";
     }
-
 
 
     @GetMapping("/delete")
@@ -63,16 +68,13 @@ private final TeacherService teacherService;
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("user", new Teacher());
-          return "/add" ;
+        return "/add";
     }
-
-
-
 
 
     @PostMapping("/add")
 
-    public String addTeacher(@ModelAttribute  Teacher teacher, RedirectAttributes redirectAttributes) {
+    public String addTeacher(@ModelAttribute Teacher teacher, RedirectAttributes redirectAttributes) {
         boolean isLive = teacherService.existsByName(teacher.getName());
         if (isLive) {
             redirectAttributes.addFlashAttribute("error", "Такое имя уже есть! Повторите попытку");
@@ -93,7 +95,7 @@ private final TeacherService teacherService;
         if (allTeachers.isEmpty()) {
             redirectAttributes.addFlashAttribute("error", "Учителей нет в базе данных");
             return "redirect:/visit/filter";
-        }else {
+        } else {
             model.addAttribute("teachers", list);
             return "filter";
         }

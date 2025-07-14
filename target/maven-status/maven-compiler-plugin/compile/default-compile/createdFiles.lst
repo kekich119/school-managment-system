@@ -1,0 +1,5 @@
+com/example/school/controller/TeacherController.class
+com/example/school/repository/TeachersRepository.class
+com/example/school/service/TeacherService.class
+com/example/school/SchoolApplication.class
+com/example/school/model/Teacher.class
