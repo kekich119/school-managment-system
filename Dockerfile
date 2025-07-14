@@ -8,4 +8,4 @@ COPY . .
 
 RUN mvn clean package -DskipTests
 
-CMD ["java", "-jar", "target/school-managment-system-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/school-0.0.1-SNAPSHOT.jar"]
