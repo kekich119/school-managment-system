@@ -1,0 +1,6 @@
+{
+  "timestamp": "2025-07-03T08:21:28.841+00:00",
+  "status": 500,
+  "error": "Internal Server Error",
+  "path": "/visit/add"
+}

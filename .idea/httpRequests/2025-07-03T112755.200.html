@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Удалить</title>
+    <link href="/styles.css" rel="stylesheet"/>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="/visit/add">Добавить учителя</a>
+        <a href="/visit/filter">Фильтровать</a>
+        <a href="/visit/delete">Удалить учителя</a>
+        <a href="/visit/main">Главная</a>
+    </nav>
+    <h1>Список учителей</h1>
+</header>
+
+<table class="teachers-table">
+    <thead>
+    <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Возраст</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>kekich</td>
+        <td>popo</td>
+        <td>33</td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="/visit/delete" method="post">
+    <label for="name">Имя учителя, которого надо удалить
+        <input type="text" id="name" name="name" onkeydown="return event.key !== ' '" required>
+
+        <div style="color: red; margin-top: 10px;">
+            <p>Такого имени нет</p>
+        </div>
+
+
+        <button type="submit">Удалить</button>
+    </label>
+</form>
+
+
+</body>
+</html>

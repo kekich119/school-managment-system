@@ -1,0 +1,6 @@
+{
+  "timestamp": "2025-07-03T08:21:14.628+00:00",
+  "status": 400,
+  "error": "Bad Request",
+  "path": "/visit/filter;jsessionid=D12B6993230A676065F9C0032276AAA3"
+}

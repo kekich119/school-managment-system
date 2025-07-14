@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="de43905d-0000-426a-bed3-ce67b7e614ae" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="filterBySub" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="filterBySub" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HttpClientEndpointsTabState">
+    <option name="cachedRequestData" value="&lt;CachedHttpClientTabRequests /&gt;" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2zHFJ5er4jjl79fEba60aiTeqzA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.SchoolApplication.executor": "Run",
+    "last_opened_file_path": "/Users/kekich/IdeaProjects/school-managment-system",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SchoolApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="school" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.school.SchoolApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="de43905d-0000-426a-bed3-ce67b7e614ae" name="Changes" comment="" />
+      <created>1751380016533</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751380016533</updated>
+      <workItem from="1751380017694" duration="16000" />
+      <workItem from="1751380076391" duration="13029000" />
+      <workItem from="1751453654788" duration="2769000" />
+      <workItem from="1751471785922" duration="1799000" />
+      <workItem from="1751473596145" duration="64000" />
+      <workItem from="1751473667170" duration="24000" />
+      <workItem from="1751473699312" duration="12000" />
+      <workItem from="1751473718435" duration="60000" />
+      <workItem from="1751473786055" duration="449000" />
+      <workItem from="1751474243563" duration="8000" />
+      <workItem from="1751474258263" duration="33000" />
+      <workItem from="1751474298758" duration="1595000" />
+      <workItem from="1751483136790" duration="618000" />
+      <workItem from="1751525069666" duration="263000" />
+      <workItem from="1751525340775" duration="563000" />
+      <workItem from="1751525913736" duration="105000" />
+      <workItem from="1751526027483" duration="85000" />
+      <workItem from="1751526122807" duration="96000" />
+      <workItem from="1751526227487" duration="19000" />
+      <workItem from="1751526254048" duration="195000" />
+      <workItem from="1751526457558" duration="5559000" />
+      <workItem from="1751539495225" duration="1844000" />
+      <workItem from="1751541593313" duration="557000" />
+      <workItem from="1751546600153" duration="10000" />
+      <workItem from="1751571788041" duration="39000" />
+      <workItem from="1751572554781" duration="1738000" />
+      <workItem from="1751646805678" duration="260000" />
+      <workItem from="1751647589071" duration="749000" />
+      <workItem from="1751970789089" duration="106000" />
+      <workItem from="1751987648895" duration="1446000" />
+      <workItem from="1752142324953" duration="7000" />
+      <workItem from="1752230570128" duration="1573000" />
+      <workItem from="1752232294705" duration="23000" />
+      <workItem from="1752232325487" duration="937000" />
+      <workItem from="1752510368965" duration="797000" />
+      <workItem from="1752512107362" duration="4064000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

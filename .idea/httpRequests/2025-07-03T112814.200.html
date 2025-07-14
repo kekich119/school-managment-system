@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="/styles.css" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить учителя</title>
+</head>
+<body>
+
+<h2>Добавить учителя</h2>
+
+
+<form action="/visit/add" method="post">
+
+
+    <label for="name">Имя учителя</label>
+    <input type="text" id="name" name="name" onkeydown="return event.key !== ' '" required>
+
+
+    <label for="lastName">Фамилия</label>
+    <input type="text" id="lastName" name="lastName" onkeydown="return event.key !== ' '" required>
+
+
+    <label for="age">Возраст</label>
+    <input type="number" id="age" name="age" min="18" max="100" onkeydown="return event.key !== ' '" required>
+
+    <label for="subject">Предмет</label>
+    <select id="subject" name="subject" required>
+        <option value="Математика">Математика</option>
+        <option value="Физика">Физика</option>
+        <option value="Химия">Химия</option>
+        <option value="Русский язык">Русский язык</option>
+        <option value="Биология">Биология</option>
+        <option value="Литература">Литература</option>
+        <option value="История">История</option>
+    </select>
+
+
+    <button type="submit"> Добавить</button>
+</form>
+
+</body>
+
+
+</html>

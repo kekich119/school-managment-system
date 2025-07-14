@@ -1,14 +1,11 @@
-# Используем JDK 21
 FROM eclipse-temurin:21-jdk
 
-# Создаём рабочую директорию внутри контейнера
-WORKDIR /app
+# Установим Maven вручную
+RUN apt-get update && apt-get install -y maven
 
-# Копируем всё содержимое проекта внутрь контейнера
+WORKDIR /app
 COPY . .
 
-# Собираем приложение с помощью Maven, без тестов
-RUN ./mvnw clean package -DskipTests
+RUN mvn clean package -DskipTests
 
-# Запускаем приложениеmvn clean package
-CMD ["java", "-jar", "target/school-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/school-managment-system-0.0.1-SNAPSHOT.jar"]
