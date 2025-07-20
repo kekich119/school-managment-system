@@ -74,7 +74,6 @@ public class TeacherController {
         boolean nameLength = teacherService.validateByNameLength(teacher.getName(), teacher.getLastName());
 
 
-
         if (isLive) {
             redirectAttributes.addFlashAttribute("error", "Такое имя уже есть! Повторите попытку");
             redirectAttributes.addFlashAttribute("user", teacher); // чтобы заполнить форму снова
@@ -101,12 +100,8 @@ public class TeacherController {
         }
 
 
-
-
         teacherService.addTeacher(teacher);
         return "redirect:/visit/main";
-
-
 
 
     }

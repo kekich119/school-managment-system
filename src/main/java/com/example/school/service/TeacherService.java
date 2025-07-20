@@ -11,7 +11,6 @@ import java.util.List;
 
 public class TeacherService {
     private final TeachersRepository teachersRepository;
-    private Teacher teacher;
 
 
     public TeacherService(TeachersRepository teachersRepository) {
@@ -42,4 +41,24 @@ public class TeacherService {
 
 
 
+    public boolean validateByAge(int age) {
+        if (age < 18 || age > 100) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean validateByNameLength(String name, String lastName) {
+        if (name.length() < 3 || name.length() > 10 || lastName.length() < 3 || lastName.length() > 10) {
+            return true;
+        } else {
+            return false;
+        }
+
+
+    }
 }
+
+
+
