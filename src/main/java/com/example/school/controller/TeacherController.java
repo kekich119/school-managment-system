@@ -40,7 +40,7 @@ public class TeacherController {
     @GetMapping("/delete")
     public String showDeleteForm(Model model) {
         model.addAttribute("teachers", teacherService.findAllTeachers());
-        return "/delete";
+        return "delete";
     }
 
     @Transactional
@@ -60,7 +60,7 @@ public class TeacherController {
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("user", new Teacher());
-        return "/add";
+        return "add";
     }
 
 
