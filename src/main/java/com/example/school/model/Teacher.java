@@ -13,7 +13,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 @Entity
-@Table(name = "teacher")
+@Table(name = "teachers_db")
 @Data
 public class Teacher {
 

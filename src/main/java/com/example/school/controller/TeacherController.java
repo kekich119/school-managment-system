@@ -30,7 +30,9 @@ public class TeacherController {
 
     @GetMapping("/main")
     public String getAllTeachers(Model model) {
-        List<Teacher> list = teacherService.findAllTeachers();
+        List<Teacher> list = teacherService.getChachAllTeachers();
+//        List<Teacher> list = teacherService.findAllTeachers();
+
         System.out.println("Учителей в базе: " + list.size()); // добавь лог
         model.addAttribute("teachers", list);
         return "visit";
@@ -45,7 +47,6 @@ public class TeacherController {
 
     @Transactional
     @PostMapping("/delete")
-
     public String deleteTeacher(@RequestParam String name, RedirectAttributes redirectAttributes) {
         boolean isLive = teacherService.existsByName(name);
         if (isLive) {
