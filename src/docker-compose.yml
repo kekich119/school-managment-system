@@ -1,0 +1,12 @@
+version: "5.3"
+
+services:
+  postgres:
+    image: postgres:14.8
+    ports:
+      - "5555:5432"
+    environment:
+      - POSTGRES_DB=teachers_db
+      - POSTGRES_USER=kekich
+      - POSTGRES_PASSWORD=1234567
+    restart: always
